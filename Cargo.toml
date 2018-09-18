@@ -1,0 +1,6 @@
+[package]
+name = "tree-of-life"
+version = "0.1.0"
+authors = ["Poelsa <joel.begnert@gmail.com>"]
+
+[dependencies]
