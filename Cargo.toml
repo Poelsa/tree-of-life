@@ -4,3 +4,5 @@ version = "0.1.0"
 authors = ["Poelsa <joel.begnert@gmail.com>"]
 
 [dependencies]
+conrod = { version = "0.61.1", features = ["glium", "winit"] }
+find_folder="0.3.0"
