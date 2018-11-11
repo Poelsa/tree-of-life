@@ -1,8 +1,27 @@
+#[macro_use]
+extern  crate conrod;
+#[macro_use]
+extern  crate conrod_derive;
+extern  crate ttf_noto_sans;
+
+mod eventloop;
+mod boiler;
+mod components;
+
+fn main() {
+	boiler::boil();
+}
+
+
+
+/*
 #[macro_use] extern crate conrod;
-extern crate find_folder;
+extern crate ttf_noto_sans;
 
 use conrod::backend::glium::glium::{self, Surface};
 use conrod::{widget, Positionable, Colorable, Widget};
+
+use ttf_noto_sans;
 
 fn main() {
 
@@ -130,3 +149,4 @@ impl EventLoop {
         self.ui_needs_update = true;
     }
 }
+*/

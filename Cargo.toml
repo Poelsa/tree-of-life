@@ -5,4 +5,5 @@ authors = ["Poelsa <joel.begnert@gmail.com>"]
 
 [dependencies]
 conrod = { version = "0.61.1", features = ["glium", "winit"] }
-find_folder="0.3.0"
+conrod_derive = "0.1.2"
+ttf-noto-sans="0.1.1"
