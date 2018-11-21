@@ -1,8 +1,10 @@
-use conrod::{widget, Widget, Labelable, Positionable, Sizeable, color, Colorable, Borderable};
+use conrod::{widget::Polygon, widget, Widget, Labelable, Positionable, Sizeable, color, Colorable, Borderable};
+use std::iter::once;
 
 widget_ids!(struct Ids {
     canvas,
     button,
+    polygon,
 });
 
 pub struct State {
@@ -44,7 +46,7 @@ impl Widget for App {
             id,
             ..
         } = args;
-
+        
         // The apps background
         widget::Canvas::new()
             .parent(id)
@@ -67,5 +69,14 @@ impl Widget for App {
         {
             state.update(|state| state.clicks += 1);
         }
+
+        let bl = [0.0, -40.0];
+        let tl = [-20.0, 40.0];
+        let tr = [20.0, 40.0];
+        let br = [40.0, -40.0];
+        let points = once(bl).chain(once(tl)).chain(once(tr)).chain(once(br));
+        Polygon::abs_fill_with(points, color::Color::Rgba(1.0, 0.0, 1.0, 1.0))
+            .middle_of(state.ids.canvas)
+            .set(state.ids.polygon, ui);
     }
 }
